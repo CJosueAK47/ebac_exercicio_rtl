@@ -18,7 +18,8 @@ const Post = () => {
         <div>
             <ul className={styles['post-comments']}>
                 {comments.map(({ comment, id }) => (
-                    <li className={styles['post-comment']} key={id}>
+                    <li className={styles['post-comment']} key={id} data-testid="post-comment">
+                        {/* Adicionando o atributo data-testid="post-comment" ao elemento li */}
                         <p className={styles['post-comment-content']}>
                             {comment}
                         </p>
@@ -28,7 +29,7 @@ const Post = () => {
             <form onSubmit={handleAddComment} className={styles['post-comments-form']}>
                 <textarea value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
                 <button type="submit" className={styles['post-comments-form-button']}>
-                    Comentar
+                  Comentar
                 </button>
             </form>
         </div>
